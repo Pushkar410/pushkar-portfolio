@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="robots" content="noindex">
+    <title th:text="${status == 404} ? 'Page not found' : 'Something went wrong'">Page not found</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;family=Newsreader:opsz,wght@6..72,400&amp;display=swap">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" href="/css/styles.css">
+</head>
+<body>
+<main class="wrap not-found">
+    <h1 th:text="${status == 404} ? 'That page does not exist.' : 'Something went wrong on my end.'">That page does not exist.</h1>
+    <p><a th:href="@{/}" href="/">Back to the homepage</a></p>
+</main>
+</body>
+</html>
