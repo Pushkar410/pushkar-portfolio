@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+    <meta name="description" content="Pushkar R Adiga — Information Science Engineer specializing in Data Science, Machine Learning, and Spring Boot Backend Systems. Bengaluru, India.">
+    <meta name="author" content="Pushkar R Adiga">
+    <title th:text="${pageTitle}">Pushkar R Adiga — Data Science & Software Engineering</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0c'/><text x='50%' y='62%' font-size='56' font-family='sans-serif' font-weight='800' fill='%23ffffff' text-anchor='middle'>P</text></svg>">
+</head>
+<body>
+
+    <!-- Subtle Background Glow -->
+    <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="topNav">
+        <div class="shell nav-shell">
+            <a class="nav-brand" href="#hero">
+                pushkar<span class="brand-dot">.</span>
+            </a>
+
+            <div class="nav-status-pill d-none-mobile">
+                <span class="status-pulse"></span>
+                <span>Bengaluru, IN</span>
+            </div>
+
+            <nav class="nav-menu" id="navMenu">
+                <a class="nav-link" href="#projects">Work</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#stack">Stack</a>
+                <a class="nav-link" href="#achievements">Achievements</a>
+                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-resume-btn" th:href="@{/resume}" target="_blank" rel="noreferrer">
+                    Resume <span class="arrow-up-right">↗</span>
+                </a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="button button-sm button-ghost d-none-mobile" th:href="@{/resume}" target="_blank" rel="noreferrer">
+                    Resume <span class="arrow-up-right">↗</span>
+                </a>
+                <button class="nav-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="mainContent">
+
+        <!-- Hero Section -->
+        <section class="section hero-section" id="hero">
+            <div class="shell">
+                <!-- Eyebrow Badge -->
+                <div class="hero-eyebrow">
+                    <span class="live-dot"></span>
+                    <span class="eyebrow-text">AVAILABLE FOR INTERNSHIPS &amp; ROLES</span>
+                    <span class="eyebrow-sep">/</span>
+                    <span class="eyebrow-text">INFORMATION SCIENCE '28</span>
+                </div>
+
+                <!-- Main Display Heading -->
+                <h1 class="hero-title">
+                    Analyzing data.<br>
+                    <span class="hero-gradient">Engineering systems.</span>
+                </h1>
+
+                <!-- Hero Subtitle & Narrative -->
+                <div class="hero-grid">
+                    <p class="hero-description">
+                        I'm <strong>Pushkar R Adiga</strong> — an Information Science Engineering undergraduate at 
+                        <em>Siddaganga Institute of Technology</em> (8.69 CGPA) based in Bengaluru. 
+                        I bridge the gap between rigorous <strong>data analytics &amp; machine learning</strong> pipelines and dependable 
+                        <strong>Java / Spring Boot</strong> backend architectures, with active exploration in <strong>Generative AI</strong>.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a class="button button-primary" href="#projects">
+                            Explore Selected Work <span class="arrow-down">↓</span>
+                        </a>
+                        <a class="button button-outline" th:href="@{/resume}" target="_blank" rel="noreferrer">
+                            View Resume <span class="arrow-up-right">↗</span>
+                        </a>
+                        <a class="button button-ghost" href="#contact">
+                            Get in Touch <span class="arrow-up-right">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Social Pills -->
+                <div class="hero-social-strip">
+                    <a class="social-chip" href="https://github.com/Pushkar410" target="_blank" rel="noreferrer">
+                        <span class="chip-label">GITHUB</span>
+                        <span class="chip-val">@Pushkar410 ↗</span>
+                    </a>
+                    <a class="social-chip" href="https://www.linkedin.com/in/pushkar-r-adiga" target="_blank" rel="noreferrer">
+                        <span class="chip-label">LINKEDIN</span>
+                        <span class="chip-val">pushkar-r-adiga ↗</span>
+                    </a>
+                    <a class="social-chip" href="https://takeuforward.org/profile/pushkarradiga" target="_blank" rel="noreferrer">
+                        <span class="chip-label">DSA</span>
+                        <span class="chip-val">takeUforward ↗</span>
+                    </a>
+                    <a class="social-chip email-copy-trigger" href="javascript:void(0)" data-email="pushkar.1si24is072@gmail.com" title="Click to copy email">
+                        <span class="chip-label">EMAIL</span>
+                        <span class="chip-val">pushkar.1si24is072@gmail.com <span class="copy-icon">📋</span></span>
+                    </a>
+                </div>
+
+                <!-- Metrics Counter Bar -->
+                <div class="metrics-bar">
+                    <div class="metric-item">
+                        <span class="metric-num">8.69<span class="metric-unit">/10</span></span>
+                        <span class="metric-label">CGPA @ SIT TUMAKURU</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <span class="metric-num">SIH<span class="metric-badge">WINNER</span></span>
+                        <span class="metric-label">SMART INDIA HACKATHON INTERNAL</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <span class="metric-num">3+<span class="metric-unit">SYSTEMS</span></span>
+                        <span class="metric-label">END-TO-END ML &amp; MICROSERVICES</span>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <span class="metric-num">DSA<span class="metric-unit">FOCUSED</span></span>
+                        <span class="metric-label">LEETCODE &amp; TAKEUFORWARD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <div class="shell">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">01 // SELECTED WORK</span>
+                        <h2 class="section-title">Featured Projects<span class="accent-dot">.</span></h2>
+                    </div>
+                    <p class="section-subtitle">
+                        Architected for reliability, mathematical rigor, and real-world utility across backend services, machine learning, and AI.
+                    </p>
+                </div>
+
+                <div class="projects-container">
+
+                    <!-- Project 01: URL Shortener Service -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-index">01</span>
+                            <span class="project-category">BACKEND &amp; DISTRIBUTED SYSTEMS</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-bar">
+                                <h3 class="project-title">URL Shortener Service</h3>
+                                <a class="project-external-btn" href="https://github.com/Pushkar410/url-shortener-sb" target="_blank" rel="noreferrer" aria-label="View URL Shortener code on GitHub">
+                                    <span class="btn-text">Source Code</span>
+                                    <span class="arrow-up-right">↗</span>
+                                </a>
+                            </div>
+                            <p class="project-desc">
+                                A high-throughput, scalable URL-shortening microservice designed around explicit REST API contracts, 
+                                normalized PostgreSQL storage, and sub-millisecond redirect lookups using optimized hashing and database indexing.
+                            </p>
+                            <ul class="project-highlights">
+                                <li><strong>Architecture:</strong> Designed clean modular REST contracts with Spring Boot and robust parameter validation.</li>
+                                <li><strong>Data &amp; Scale:</strong> Applied custom hashing and PostgreSQL B-tree indexing strategies for fast redirect lookups.</li>
+                                <li><strong>DevOps:</strong> Containerized multi-stage Docker build ensuring consistent and portable execution across environments.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span class="tag">Java 21</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">REST APIs</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">System Design</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 02: Text-to-SQL Chatbot -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-index">02</span>
+                            <span class="project-category">GENERATIVE AI &amp; NATURAL LANGUAGE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-bar">
+                                <h3 class="project-title">Text-to-SQL Chatbot</h3>
+                                <a class="project-external-btn" href="https://github.com/Pushkar410" target="_blank" rel="noreferrer" aria-label="View Text-to-SQL Chatbot on GitHub">
+                                    <span class="btn-text">Source Code</span>
+                                    <span class="arrow-up-right">↗</span>
+                                </a>
+                            </div>
+                            <p class="project-desc">
+                                An intelligent conversational interface that translates complex natural-language business questions into 
+                                syntactically and dialectically correct SQL queries, democratizing database access for non-technical stakeholders.
+                            </p>
+                            <ul class="project-highlights">
+                                <li><strong>Prompt Engineering:</strong> Designed schema-aware prompt templates incorporating table schemas, constraints, and relational maps to mitigate hallucinations.</li>
+                                <li><strong>Evaluation:</strong> Tested and validated outputs across complex multi-table joins, subqueries, and ambiguous edge cases.</li>
+                                <li><strong>Integration:</strong> Seamless Python execution layer connecting the LLM directly to test PostgreSQL instances.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span class="tag">Generative AI</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">SQL (PostgreSQL)</span>
+                                <span class="tag">LLM Tooling</span>
+                                <span class="tag">Prompt Engineering</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 03: Customer Churn Prediction & Analysis -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-index">03</span>
+                            <span class="project-category">DATA SCIENCE &amp; MACHINE LEARNING</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-bar">
+                                <h3 class="project-title">Customer Churn Prediction &amp; Analysis</h3>
+                                <a class="project-external-btn" href="https://github.com/Pushkar410/-churn" target="_blank" rel="noreferrer" aria-label="View Customer Churn project on GitHub">
+                                    <span class="btn-text">Source Code</span>
+                                    <span class="arrow-up-right">↗</span>
+                                </a>
+                            </div>
+                            <p class="project-desc">
+                                An end-to-end predictive machine learning pipeline on transactional customer data, translating statistical 
+                                models into high-impact customer retention insights and interactive business dashboards.
+                            </p>
+                            <ul class="project-highlights">
+                                <li><strong>Data Pipeline:</strong> Comprehensive data cleaning, exploratory data analysis (EDA), and feature engineering on relational datasets.</li>
+                                <li><strong>Modeling &amp; Tuning:</strong> Trained and benchmarked Logistic Regression, Decision Tree, and Random Forest models using cross-validation and precision/recall analysis.</li>
+                                <li><strong>Business Impact:</strong> Created interactive Tableau dashboards pinpointing primary churn drivers to directly inform retention strategies.</li>
+                            </ul>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Scikit-learn</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">Statistical Modeling</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- GitHub Banner -->
+                <div class="github-callout">
+                    <div class="github-callout-text">
+                        <span class="callout-tag">CONTINUOUS EXPERIMENTATION</span>
+                        <h4>Explore more algorithms, pipelines, and code repositories on GitHub.</h4>
+                    </div>
+                    <a class="button button-outline" href="https://github.com/Pushkar410" target="_blank" rel="noreferrer">
+                        Visit @Pushkar410 <span class="arrow-up-right">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section alt-bg" id="about">
+            <div class="shell">
+                <div class="about-grid">
+                    <div class="about-left">
+                        <span class="section-tag">02 // A LITTLE ABOUT ME</span>
+                        <h2 class="section-title">
+                            Curious by nature.<br>
+                            <span class="muted-text">Engineer by practice.</span>
+                        </h2>
+
+                        <div class="about-prose">
+                            <p>
+                                I'm an engineering student pursuing my Bachelor of Engineering in 
+                                <strong>Information Science Engineering</strong> at <em>Siddaganga Institute of Technology, Tumakuru</em> (2024–2028).
+                            </p>
+                            <p>
+                                My passion sits at the cross-section of <strong>analytical data modeling</strong> and <strong>software systems architecture</strong>. 
+                                Rather than viewing machine learning models in isolation, I care about the complete lifecycle: 
+                                from statistical data exploration and feature engineering to deploying containerized, resilient backend APIs that make insights usable.
+                            </p>
+                            <p>
+                                I value writing readable code, designing normalized relational schemas, and maintaining strong computer science foundations — 
+                                regularly sharpening my problem solving skills through daily algorithmic challenges on LeetCode and takeUforward.
+                            </p>
+                        </div>
+
+                        <div class="about-action">
+                            <a class="button button-sm button-primary" href="https://www.linkedin.com/in/pushkar-r-adiga" target="_blank" rel="noreferrer">
+                                Connect on LinkedIn <span class="arrow-up-right">↗</span>
+                            </a>
+                            <a class="button button-sm button-ghost" th:href="@{/resume}" target="_blank" rel="noreferrer">
+                                Download Full CV <span class="arrow-up-right">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-right">
+                        <div class="profile-card">
+                            <div class="profile-card-header">
+                                <span class="profile-avatar-initials">PA</span>
+                                <div>
+                                    <h3 class="profile-name">Pushkar R Adiga</h3>
+                                    <span class="profile-role">Information Science Engineering '28</span>
+                                </div>
+                            </div>
+
+                            <div class="profile-details">
+                                <div class="detail-row">
+                                    <span class="detail-key">INSTITUTION</span>
+                                    <span class="detail-val">Siddaganga Institute of Technology</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-key">LOCATION</span>
+                                    <span class="detail-val">Tumakuru / Bengaluru, Karnataka</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-key">ACADEMIC STANDING</span>
+                                    <span class="detail-val highlight-val">CGPA: 8.69 / 10</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-key">CORE FOCUS</span>
+                                    <span class="detail-val">Data Science, ML Pipelines &amp; Backend</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-key">PHONE</span>
+                                    <span class="detail-val"><a href="tel:+918073722418">+91-8073722418</a></span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-key">EMAIL</span>
+                                    <span class="detail-val"><a href="mailto:pushkar.1si24is072@gmail.com">pushkar.1si24is072@gmail.com</a></span>
+                                </div>
+                            </div>
+
+                            <div class="profile-quote">
+                                <blockquote>
+                                    "Skilled at translating ambiguous business problems into clear, data-driven insights and reliable software services."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section class="section" id="experience">
+            <div class="shell">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">03 // JOURNEY &amp; SIMULATIONS</span>
+                        <h2 class="section-title">Experience &amp; Education<span class="accent-dot">.</span></h2>
+                    </div>
+                    <p class="section-subtitle">
+                        Hands-on project development, industry simulations, and rigorous academic foundations.
+                    </p>
+                </div>
+
+                <div class="timeline-wrapper">
+
+                    <!-- Item 1: Self-Driven ML Projects -->
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-dates">OCT 2024 — PRESENT</span>
+                            <span class="timeline-badge">HANDS-ON PROJECTS</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-heading-block">
+                                <h3 class="timeline-role">Data Science &amp; Machine Learning Engineering</h3>
+                                <span class="timeline-org">Self-driven, Project-Based Work</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built and tested end-to-end ML pipelines spanning data cleaning, exploratory data analysis (EDA), feature engineering, and model evaluation using Python and PostgreSQL.</li>
+                                <li>Evaluated multiple modeling approaches (logistic regression, decision trees, random forest) for customer-churn, breast-cancer, and rental-price prediction; applied cross-validation to select the best-performing model for each use case.</li>
+                                <li>Containerized ML workflows using Docker to ensure reproducible, portable environments across development and testing.</li>
+                                <li>Built interactive Tableau dashboards to communicate model outputs and key business drivers to non-technical stakeholders.</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>Python</span><span>PostgreSQL</span><span>Scikit-learn</span><span>Docker</span><span>Tableau</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Tata Group Forage Internship -->
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-dates">JUL 2025</span>
+                            <span class="timeline-badge">VIRTUAL INTERNSHIP</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-heading-block">
+                                <h3 class="timeline-role">Business &amp; Data Analytics Simulation</h3>
+                                <span class="timeline-org">Tata Group (Forage)</span>
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Completed industry-oriented business and data-analytics case studies, collaborating through open-ended, real-world problem statements under time constraints.</li>
+                                <li>Formulated data-driven recommendations and synthesized analytical findings for business decision-makers.</li>
+                            </ul>
+                            <div class="timeline-tags">
+                                <span>Data Analytics</span><span>Business Intelligence</span><span>Case Studies</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: College Education -->
+                    <div class="timeline-row">
+                        <div class="timeline-meta">
+                            <span class="timeline-dates">2024 — 2028</span>
+                            <span class="timeline-badge highlight-badge">UNDERGRADUATE DEGREE</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-heading-block">
+                                <h3 class="timeline-role">Bachelor of Engineering — Information Science Engineering</h3>
+                                <span class="timeline-org">Siddaganga Institute of Technology, Tumakuru, Karnataka</span>
+                            </div>
+                            <p class="timeline-cgpa">
+                                <strong>Academic Performance:</strong> CGPA: <span class="cgpa-pill">8.69 / 10</span>
+                            </p>
+                            <p class="timeline-coursework">
+                                <strong>Relevant Coursework:</strong> Data Structures &amp; Algorithms, DBMS (PostgreSQL), Statistics, Object-Oriented Programming (OOP), System Design, Operating Systems.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Algorithms</span><span>DBMS</span><span>Statistics</span><span>System Design</span><span>Operating Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Stack Section -->
+        <section class="section alt-bg" id="stack">
+            <div class="shell">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">04 // TOOLS &amp; CAPABILITIES</span>
+                        <h2 class="section-title">Technical Stack<span class="accent-dot">.</span></h2>
+                    </div>
+                    <p class="section-subtitle">
+                        Languages, data tools, backend frameworks, and architectural principles applied in projects.
+                    </p>
+                </div>
+
+                <div class="stack-matrix">
+
+                    <!-- Languages -->
+                    <div class="stack-card">
+                        <div class="stack-card-icon">⚡</div>
+                        <h3 class="stack-card-title">Languages</h3>
+                        <p class="stack-card-desc">Core programming languages used for systems, data analysis, and competitive programming.</p>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill">Java</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">SQL (PostgreSQL)</span>
+                            <span class="skill-pill">C++</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Systems -->
+                    <div class="stack-card">
+                        <div class="stack-card-icon">⚙️</div>
+                        <h3 class="stack-card-title">Backend &amp; Systems</h3>
+                        <p class="stack-card-desc">Building resilient microservices, robust API contracts, and scalable databases.</p>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill">Spring Boot</span>
+                            <span class="skill-pill">REST APIs</span>
+                            <span class="skill-pill">PostgreSQL</span>
+                            <span class="skill-pill">API Design</span>
+                            <span class="skill-pill">Docker</span>
+                            <span class="skill-pill">Git &amp; GitHub</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Science & ML -->
+                    <div class="stack-card">
+                        <div class="stack-card-icon">📊</div>
+                        <h3 class="stack-card-title">Data Science &amp; ML</h3>
+                        <p class="stack-card-desc">Statistical modeling, model selection, predictive analysis, and cross-validation.</p>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill">Machine Learning</span>
+                            <span class="skill-pill">Statistical Modeling</span>
+                            <span class="skill-pill">EDA</span>
+                            <span class="skill-pill">Feature Engineering</span>
+                            <span class="skill-pill">Classification</span>
+                            <span class="skill-pill">Regression</span>
+                            <span class="skill-pill">Cross-Validation</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Analytics Tools -->
+                    <div class="stack-card">
+                        <div class="stack-card-icon">📈</div>
+                        <h3 class="stack-card-title">Data &amp; Analytics Tools</h3>
+                        <p class="stack-card-desc">Libraries and software for numerical computation, tabular manipulation, and executive dashboards.</p>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill">Pandas</span>
+                            <span class="skill-pill">NumPy</span>
+                            <span class="skill-pill">Scikit-learn</span>
+                            <span class="skill-pill">Tableau</span>
+                            <span class="skill-pill">Microsoft Excel</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & LLM Tooling -->
+                    <div class="stack-card">
+                        <div class="stack-card-icon">🤖</div>
+                        <h3 class="stack-card-title">Generative AI &amp; LLM</h3>
+                        <p class="stack-card-desc">Applying modern LLMs and structured prompt engineering to practical software solutions.</p>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill">Generative AI</span>
+                            <span class="skill-pill">LLM Tooling</span>
+                            <span class="skill-pill">Schema-Aware Prompts</span>
+                            <span class="skill-pill">Prompt Engineering</span>
+                            <span class="skill-pill">Text-to-SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Core CS -->
+                    <div class="stack-card">
+                        <div class="stack-card-icon">🧠</div>
+                        <h3 class="stack-card-title">Core Computer Science</h3>
+                        <p class="stack-card-desc">Theoretical and algorithmic foundations that govern software efficiency and structure.</p>
+                        <div class="skill-pill-list">
+                            <span class="skill-pill">Data Structures (DSA)</span>
+                            <span class="skill-pill">Algorithms</span>
+                            <span class="skill-pill">OOP</span>
+                            <span class="skill-pill">DBMS</span>
+                            <span class="skill-pill">Operating Systems</span>
+                            <span class="skill-pill">System Design</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Core Strengths Strip -->
+                <div class="strengths-box">
+                    <span class="strengths-label">PROFESSIONAL STRENGTHS</span>
+                    <div class="strengths-list">
+                        <span>Problem Solving</span>
+                        <span class="dot-sep">•</span>
+                        <span>Ownership</span>
+                        <span class="dot-sep">•</span>
+                        <span>Collaboration</span>
+                        <span class="dot-sep">•</span>
+                        <span>Adaptability</span>
+                        <span class="dot-sep">•</span>
+                        <span>Technical Communication</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Activities Section -->
+        <section class="section" id="achievements">
+            <div class="shell">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">05 // RECOGNITION &amp; LEADERSHIP</span>
+                        <h2 class="section-title">Achievements &amp; Activities<span class="accent-dot">.</span></h2>
+                    </div>
+                    <p class="section-subtitle">
+                        Competitive milestones, collaborative clubs, and leadership responsibilities.
+                    </p>
+                </div>
+
+                <div class="achievements-grid">
+
+                    <div class="achievement-card highlight-card">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag">COMPETITIVE MILESTONE</span>
+                            <h3 class="achievement-title">Winner — Smart India Hackathon (SIH) Internal Round</h3>
+                            <span class="achievement-sub">Siddaganga Institute of Technology</span>
+                            <p class="achievement-desc">
+                                Secured first place in the internal college selection round of the nationwide Smart India Hackathon, 
+                                designing innovative technical solutions under rigorous time bounds.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">💻</div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag">TECHNICAL COMMUNITY</span>
+                            <h3 class="achievement-title">Member — DeCoders Coding Club</h3>
+                            <span class="achievement-sub">March 2025 — Present</span>
+                            <p class="achievement-desc">
+                                Actively collaborating with peers on algorithmic problem solving, peer code reviews, and technical workshops.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎭</div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag">LEADERSHIP &amp; LOGISTICS</span>
+                            <h3 class="achievement-title">Head of Props — Aurora: The Theatrical Club</h3>
+                            <span class="achievement-sub">October 2024 — Present</span>
+                            <p class="achievement-desc">
+                                Managing end-to-end production assets, cross-functional team coordination, stage timing, and inventory logistics for major theatrical productions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⚡</div>
+                        <div class="achievement-body">
+                            <span class="achievement-tag">CONTINUOUS LEARNING</span>
+                            <h3 class="achievement-title">Active Problem Solver on LeetCode &amp; takeUforward</h3>
+                            <span class="achievement-sub">Ongoing Daily Practice</span>
+                            <p class="achievement-desc">
+                                Practicing Data Structures and Algorithms (DSA) patterns across dynamic programming, trees, graphs, and arrays to build sharp engineering intuition.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="shell">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-tag">06 // GET IN TOUCH</span>
+                        <h2 class="contact-title">
+                            Let's build something<br>
+                            <span class="muted-text">worth keeping.</span>
+                        </h2>
+                        <p class="contact-description">
+                            Whether you have an internship opportunity, want to collaborate on data science or backend systems, 
+                            or just want to talk software engineering — feel free to drop a message.
+                        </p>
+
+                        <!-- Direct Email Copy Block -->
+                        <div class="contact-email-card">
+                            <span class="card-eyebrow">DIRECT EMAIL</span>
+                            <div class="email-display-row">
+                                <a class="email-anchor" href="mailto:pushkar.1si24is072@gmail.com">pushkar.1si24is072@gmail.com</a>
+                                <button class="copy-email-btn email-copy-trigger" data-email="pushkar.1si24is072@gmail.com" type="button" aria-label="Copy email address to clipboard">
+                                    Copy 📋
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Direct Phone & Location -->
+                        <div class="contact-meta-list">
+                            <div class="meta-item">
+                                <span class="meta-label">PHONE</span>
+                                <a class="meta-val" href="tel:+918073722418">+91-8073722418 ↗</a>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">LOCATION</span>
+                                <span class="meta-val">Bengaluru, Karnataka, India</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">RESUME</span>
+                                <a class="meta-val" th:href="@{/resume}" target="_blank" rel="noreferrer">Download PDF ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <h3 class="form-title">Send a message</h3>
+                            
+                            <div class="form-field">
+                                <label for="formName">Your Name <span class="req">*</span></label>
+                                <input type="text" id="formName" name="name" required maxlength="80" placeholder="e.g. Maya Sharma">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="formEmail">Email Address <span class="req">*</span></label>
+                                <input type="email" id="formEmail" name="email" required maxlength="160" placeholder="e.g. maya@company.com">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="formMessage">Message <span class="req">*</span></label>
+                                <textarea id="formMessage" name="message" required maxlength="2000" rows="5" placeholder="Tell me about your project, idea, or role..."></textarea>
+                            </div>
+
+                            <div class="form-submit-row">
+                                <button class="button button-primary" type="submit" id="submitBtn">
+                                    <span>Send Message</span>
+                                    <span class="arrow-up-right">↗</span>
+                                </button>
+                                <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <footer class="footer-bottom">
+                    <div class="footer-left">
+                        <a class="footer-brand" href="#hero">pushkar<span class="brand-dot">.</span></a>
+                        <span class="footer-clock" id="istClock">BENGALURU: --:--:-- IST</span>
+                    </div>
+
+                    <div class="footer-links">
+                        <a href="https://github.com/Pushkar410" target="_blank" rel="noreferrer">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/pushkar-r-adiga" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                        <a href="https://takeuforward.org/profile/pushkarradiga" target="_blank" rel="noreferrer">takeUforward ↗</a>
+                        <a th:href="@{/resume}" target="_blank" rel="noreferrer">Resume ↗</a>
+                    </div>
+
+                    <div class="footer-copyright">
+                        <span>© 2026 PUSHKAR R ADIGA</span>
+                        <span class="copyright-sub">BUILT WITH SPRING BOOT &amp; THYMELEAF</span>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification for Copying -->
+    <div id="toastNotification" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <span id="toastMessage">Email copied to clipboard!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
